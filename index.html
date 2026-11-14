@@ -2,57 +2,57 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-  <meta name="theme-color" content="#101820">
-  <meta name="description" content="Empire Online — arena TPS de treinamento.">
-  <title>Empire Online — Arena</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111018">
+  <meta name="description" content="Camadê 3D — catálogo de peças e projetos para impressão 3D.">
+  <title>Camadê 3D — Catálogo de peças</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/style.css">
 </head>
 <body>
-  <div id="app">
-    <div id="game-root"></div>
-    <section id="main-menu" class="main-menu lobby-v2">
-      <div class="lobby-world"><div class="world-sky"></div><div class="world-sun"></div><div class="world-mountains"></div><div class="world-hangar hangar-a"></div><div class="world-hangar hangar-b"></div><div class="world-tower"></div><div class="world-ground"></div><div class="world-lights"></div></div>
-      <header class="lobby-header">
-        <div class="lobby-brand"><b class="brand-icon">E</b><div><strong>EMPIRE <i>ONLINE</i></strong><small>OPERAÇÃO ZERO · TEMPORADA 01</small></div></div>
-        <nav class="lobby-nav"><button class="nav-tab active" data-tab="inicio">INÍCIO</button><button class="nav-tab" data-tab="arsenal">ARSENAL</button><button class="nav-tab" data-tab="loja">LOJA</button></nav>
-        <div class="lobby-account"><div class="currency"><span class="coin-gold">◆</span><b>12.450</b><button aria-label="Adicionar moedas">+</button></div><div class="currency"><span class="coin-blue">◈</span><b>320</b><button aria-label="Adicionar créditos">+</button></div><div class="account-avatar">R<span></span></div></div>
-      </header>
-      <div class="lobby-left-rail"><div class="rail-label">MENU</div><button class="rail-item selected" data-tab="inicio"><span>⌂</span><b>LOBBY</b></button><button class="rail-item" data-tab="arsenal"><span>⚔</span><b>ARSENAL</b></button><button class="rail-item" data-tab="loja"><span>◇</span><b>LOJA</b></button><div class="rail-separator"></div><button class="rail-item" id="open-skins"><span>◈</span><b>VISUAL</b></button><button class="rail-item" id="open-settings"><span>⚙</span><b>AJUSTES</b></button><div class="rail-bottom"><span class="online-pulse"></span> ONLINE</div></div>
-      <div class="lobby-hero-copy"><div class="hero-season"><span>◆</span> TEMPORADA 01 <i>·</i> OPERAÇÃO ZERO</div><h1>ENTRE NA<br><em>OPERAÇÃO.</em></h1><p>O campo está pronto. Sua próxima vitória começa aqui.</p><div class="hero-tags"><span>✦ MODO SOLO</span><span>◈ TREINAMENTO</span><span>⌖ MAPA: BASE ZERO</span></div></div>
-      <div class="operator-stage" aria-label="Operador tático em destaque"><div class="stage-ring"></div><div class="stage-shadow"></div><div class="operator-figure"><div class="op-backpack"></div><div class="op-leg op-leg-left"><i></i></div><div class="op-leg op-leg-right"><i></i></div><div class="op-body"><i class="op-vest"></i><i class="op-belt"></i><i class="op-strap"></i></div><div class="op-arm op-arm-left"><i></i></div><div class="op-arm op-arm-right"><i></i></div><div class="op-neck"></div><div class="op-head"><i class="op-mask"></i><i class="op-goggle"></i><i class="op-helmet"></i></div><div class="op-rifle"><i></i><b></b><span></span></div></div><div class="operator-caption"><span>OPERADOR ATIVO</span><b>GHOST <i>01</i></b><small>CLASSE DE ASSALTO · NV. 01</small></div></div>
-      <aside class="lobby-right-panel"><div class="panel-topline"><span class="online-pulse"></span> PARTIDA DISPONÍVEL <b>●</b></div><div class="mode-art"><div class="mode-art-grid"></div><span>MAPA 01</span><b>BASE ZERO</b><small>CAMPO DE TREINAMENTO</small></div><div class="mode-details"><div><small>MODO DE JOGO</small><b>TREINAMENTO</b></div><div><small>JOGADORES</small><b>1 / 6</b></div></div><button id="play-btn" class="lobby-play"><span>▶</span><b>JOGAR AGORA</b><small>ENTRAR NA ARENA</small></button><div class="panel-foot"><span>◈</span> SEM FILA · ACESSO IMEDIATO</div></aside>
-      <div class="lobby-bottom"><div class="bottom-event"><div class="event-icon">✦</div><div><small>DESTAQUE DA TEMPORADA</small><b>OPERAÇÃO: PRIMEIRO CONTATO</b></div><span class="event-arrow">›</span></div><div class="bottom-progress"><div><small>PROGRESSO DO OPERADOR</small><b>RECRUTA I</b></div><div class="progress-track"><i></i></div><span>120 / 1.000 XP</span></div><div class="bottom-version">EMPIRE ONLINE <i>BUILD 0.4 · PRE-ALPHA</i></div></div>
-      <div id="skins-panel" class="menu-modal hidden"><div class="modal-head"><div><small>PERSONALIZAÇÃO</small><h2>ESCOLHA SUA SKIN</h2></div><button class="modal-close" data-close="skins-panel">×</button></div><div class="skin-preview"><div class="skin-silhouette"><span></span></div><div><b id="skin-name">OPERADOR TÁTICO</b><small>VISUAL DE COMBATE</small></div></div><div class="skin-options"><button data-skin="0" class="skin-option selected"><i class="skin-swatch s0"></i><b>OLIVA</b><small>PADRÃO</small></button><button data-skin="1" class="skin-option"><i class="skin-swatch s1"></i><b>ÁRTICO</b><small>AZUL</small></button><button data-skin="2" class="skin-option"><i class="skin-swatch s2"></i><b>INFERNO</b><small>VERMELHO</small></button><button data-skin="3" class="skin-option"><i class="skin-swatch s3"></i><b>SOMBRA</b><small>PRETO</small></button></div><button class="menu-play modal-done" data-close="skins-panel"><b>EQUIPAR SKIN</b></button></div>
-      <div id="settings-panel" class="menu-modal hidden"><div class="modal-head"><div><small>SISTEMA</small><h2>CONFIGURAÇÕES</h2></div><button class="modal-close" data-close="settings-panel">×</button></div><div class="setting-row"><span><b>QUALIDADE GRÁFICA</b><small>Ajuste automático para seu aparelho</small></span><strong>OTIMIZADA</strong></div><div class="setting-row"><span><b>CONTROLES</b><small>Analógico + câmera por toque</small></span><strong>MOBILE</strong></div><div class="setting-row"><span><b>ÁUDIO</b><small>Áudio ainda não disponível</small></span><strong>EM BREVE</strong></div><button class="menu-play modal-done" data-close="settings-panel"><b>VOLTAR</b></button></div>
-      <div id="lobby-toast" class="lobby-toast"></div>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">C<span>3D</span></span><span>camadê<span class="brand-light">3D</span><small>IDEIAS QUE GANHAM FORMA</small></span></a>
+    <nav class="desktop-nav"><a class="active" href="#catalogo">Catálogo</a><a href="#sobre">Sobre</a></nav>
+    <div class="header-actions"><button class="icon-button" id="search-focus" aria-label="Pesquisar">⌕</button><button class="admin-button" id="admin-open">Painel admin <span>↗</span></button></div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy"><div class="eyebrow"><i></i> CATÁLOGO DE IMPRESSÃO 3D</div>
+        <h1>Peças úteis.<br><span>Ideias infinitas.</span></h1>
+        <p>Explore modelos, encontre aquela peça que faltava e transforme ideias em objetos reais.</p>
+        <a class="hero-cta" href="#catalogo">Explorar catálogo <span>↓</span></a>
+      </div>
+      <div class="hero-art" aria-label="Ilustração abstrata de uma peça impressa em 3D"><div class="art-orbit orbit-a"></div><div class="art-orbit orbit-b"></div><div class="art-cube"><div class="cube-top"></div><div class="cube-front"></div><div class="cube-side"></div><div class="cube-hole"></div></div><span class="art-label label-top">CAMADA 042</span><span class="art-label label-bottom">FEITO EM 3D <b>✳</b></span></div>
     </section>
-    <header class="top-hud">
-      <div class="brand"><b class="brand-icon">E</b><div><strong>EMPIRE ONLINE</strong><small>ARENA DE TREINAMENTO</small></div></div>
-      <div class="match-info"><span class="live-dot"></span> TREINO <i>•</i> <span id="timer">00:00</span></div>
-      <button id="pause-btn" class="hud-icon" aria-label="Pausar">Ⅱ</button>
-    </header>
-    <section class="left-hud">
-      <div class="player-card"><div class="avatar">E</div><div class="player-data"><b>JOGADOR</b><small>RECRUTA · NV. 1</small></div><div class="ping"><i></i> 32ms</div></div>
-      <div class="health-box"><div class="health-label"><span>HP</span><b id="hp-text">200/200</b></div><div class="health-track"><i id="hp-fill"></i></div><div class="armor-line">COLETE <b id="armor-text">100</b></div></div>
+
+    <section class="catalog-section" id="catalogo">
+      <div class="section-heading"><div><div class="eyebrow">ENCONTRE SUA PRÓXIMA PEÇA</div><h2>Catálogo <span>em destaque</span></h2></div><div class="catalog-count"><b id="piece-count">0</b> peças disponíveis</div></div>
+      <div class="toolbar"><label class="search-box"><span>⌕</span><input id="search-input" type="search" placeholder="Buscar peça, nome ou categoria..."><kbd>⌕</kbd></label><div class="filters" id="category-filters"><button class="filter active" data-category="Todas">Todas</button><button class="filter" data-category="Organização">Organização</button><button class="filter" data-category="Decoração">Decoração</button><button class="filter" data-category="Acessórios">Acessórios</button><button class="filter" data-category="Utilidades">Utilidades</button></div></div>
+      <div class="product-grid" id="product-grid"></div>
+      <div class="empty-state hidden" id="empty-state"><span>⌕</span><h3>Nenhuma peça encontrada</h3><p>Tente outro termo ou categoria.</p><button id="clear-filters">Limpar filtros</button></div>
     </section>
-    <section class="right-hud">
-      <div class="mini-map"><div class="map-title">ARENA 01</div><div class="map-grid"><i class="map-player"></i><i class="map-target t1"></i><i class="map-target t2"></i><i class="map-target t3"></i></div></div>
-      <div class="round-stats"><span>ALVOS</span><b id="target-count">06</b><span>ELIMINAÇÕES</span><b id="kills">00</b></div>
+
+    <section class="about-strip" id="sobre"><div class="about-symbol">C<span>3D</span></div><div><div class="eyebrow">DO DIGITAL PARA O REAL</div><h2>Uma ideia de cada vez.</h2><p>Um espaço para reunir peças, protótipos e criações feitas para impressão 3D.</p></div><div class="about-stat"><b>100%</b><span>CRIATIVIDADE</span></div></section>
+  </main>
+  <footer><a class="brand footer-brand" href="#"><span class="brand-mark">C<span>3D</span></span><span>camadê<span class="brand-light">3D</span><small>IDEIAS QUE GANHAM FORMA</small></span></a><span>© 2026 Camadê 3D · Feito para criar.</span><a href="#catalogo">Voltar ao topo ↑</a></footer>
+
+  <div class="modal-backdrop hidden" id="admin-modal">
+    <section class="admin-modal" role="dialog" aria-modal="true" aria-labelledby="admin-title">
+      <div class="modal-heading"><div><div class="eyebrow">GERENCIAMENTO DO CATÁLOGO</div><h2 id="admin-title">Painel administrativo</h2><p>Adicione e organize as peças do catálogo.</p></div><button class="close-button" data-close="admin-modal" aria-label="Fechar">×</button></div>
+      <form id="piece-form">
+        <input type="hidden" id="piece-id">
+        <div class="form-grid"><label>Nome da peça<input id="piece-name" required maxlength="70" placeholder="Ex.: Suporte para fone"></label><label>Categoria<select id="piece-category"><option>Organização</option><option>Decoração</option><option>Acessórios</option><option>Utilidades</option></select></label><label>Preço (R$)<input id="piece-price" type="number" min="0" step="0.01" placeholder="0,00"></label><label>Material<input id="piece-material" maxlength="40" placeholder="Ex.: PLA"></label><label class="full-field">URL da imagem<input id="piece-image" type="url" placeholder="https://..."></label><label class="full-field">Descrição<textarea id="piece-description" rows="3" maxlength="240" placeholder="Conte um pouco sobre a peça..."></textarea></label></div>
+        <div class="form-actions"><button type="button" class="secondary-button hidden" id="cancel-edit">Cancelar edição</button><button class="primary-button" type="submit" id="save-piece">Adicionar peça <span>＋</span></button></div>
+      </form>
+      <div class="admin-list-heading"><b>Peças cadastradas</b><span id="admin-count">0 itens</span></div><div class="admin-list" id="admin-list"></div>
+      <p class="local-note">ⓘ Nesta versão, os cadastros ficam salvos somente neste navegador. O painel ainda não tem login nem banco de dados.</p>
     </section>
-    <div class="crosshair" id="crosshair"><i></i><i></i><i></i><i></i><b></b></div>
-    <div id="hitmarker" class="hitmarker">✕</div>
-    <div id="damage-layer"></div>
-    <div class="bottom-hud">
-      <div class="weapon-panel"><div class="weapon-name"><span id="weapon-name">RIFLE</span><small id="weapon-type">AR · AUTOMÁTICO</small></div><div class="ammo"><b id="ammo">30</b><span>/ <i id="reserve">120</i></span></div><div class="weapon-actions"><button id="reload-btn">↻ RECARREGAR</button><button id="weapon-btn">TROCAR ARMA</button></div></div>
-      <div class="action-buttons"><button id="crouch-btn" class="action-btn">⌄<small>AGACHAR</small></button><button id="jump-btn" class="action-btn">↑<small>PULAR</small></button><button id="aim-btn" class="action-btn aim">◎<small>MIRAR</small></button><button id="fire-btn" class="fire-btn"><span>●</span><small>ATIRAR</small></button></div>
-    </div>
-    <div class="mobile-controls"><div id="joystick" class="joystick"><div class="joy-ring"></div><div id="joy-knob" class="joy-knob"></div></div><div class="look-hint">DESLIZE PARA GIRAR A CÂMERA</div></div>
-    <div class="desktop-hint">WASD mover · Mouse mirar · Clique atirar · Espaço pular · Shift correr · R recarregar · 1/2 trocar arma</div>
-    <div id="pause-screen" class="overlay hidden"><div class="pause-card"><b class="brand-icon">E</b><p class="eyebrow">EMPIRE ONLINE</p><h2>PARTIDA PAUSADA</h2><p>O treinamento está esperando você.</p><button id="resume-btn" class="primary">CONTINUAR</button><button id="reset-btn" class="secondary">REINICIAR TREINO</button><button id="menu-btn" class="secondary">VOLTAR AO MENU</button></div></div>
-    <div id="toast" class="toast"></div>
-    <div class="mode-label">MODO TREINAMENTO <span>•</span> DANO DE PEITO E CAPACETE</div>
   </div>
-  <script type="module" src="/src/lobby.js"></script>
+  <div class="toast hidden" id="toast" role="status"></div>
   <script type="module" src="/src/main.js"></script>
 </body>
 </html>
